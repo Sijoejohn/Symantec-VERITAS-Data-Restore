@@ -39,7 +39,7 @@ STEP 1) Download the script “BEScriptRestore.ps1” from the GitHub and extrac
 
 STEP 2) Edit the following portion in the script.
 
-#Edit this session
+**#Edit this session**
 
 **The folder chosen for test restore from the server**.
 
