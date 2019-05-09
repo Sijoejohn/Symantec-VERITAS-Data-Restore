@@ -1,4 +1,19 @@
-﻿
+﻿###############################################################################
+# Script info     :  Symantec/VERITAS Automated Data Restore Test from Backup.
+# Script          :  BERestore.ps1
+# Verified on     :  Symantec 2014,2015,2020 and VERITAS 2016
+# Author          :  Sijo John
+# Version         :  V-1.0
+# Last Modified   :  09/05/2018
+# The Script can be used to automate file/folder restore test from the Symantec/VERITAS backup. 
+# Restore test is to ensure that the data is recoverable from the backup..
+# .SYNOPSIS
+# Usage Example   : PS>.BERestore.ps1
+################################################################################
+
+
+
+
 Begin
 
 {
@@ -60,6 +75,8 @@ $SMTPPort = "Enter SMTP server port number here"
 
    $starttime = $time
 
+   #Restore data from backup
+
    Submit-BEFileSystemRestoreJob -FileSystemSelection $Foldername -AgentServer $Server -RedirectToPath $Restorepath -NotificationRecipientList $recipient
 
    Write-Host ("Restoration complete time $time")
@@ -70,10 +87,13 @@ $SMTPPort = "Enter SMTP server port number here"
 
    Write-Host ("Verifying restored files")
 
+   #Verify Restored data
 
    $Restoredfile = Get-ChildItem "$Restorepath"| Where {$_.LastWriteTime -gt (Get-Date).AddHours(-24)} -ErrorAction SilentlyContinue
    If ($Restoredfile.Exists) {Write-Host "Restored files verified and restore task succeeded"}
    Else {Write-Host "File does not exist/ Restore failed- Check restore logs"}
+
+   #Verify size of data restored
 
    $size = 0
    $size = "{0:N2} MB" -f ((gci $Restorepath -Recurse | Measure-Object -property Length -s).Sum /1MB)
@@ -103,6 +123,8 @@ $SMTPPort = "Enter SMTP server port number here"
   Write-Host ("$Summary")
 
   Write-Host ("Gathering logs to send email")
+
+  #Email restore report
 
   $Attachments = Get-ChildItem $LogFolder\*.* -include *.txt,*.log | Where{$_.LastWriteTime -gt (Get-Date).AddMinutes(-3)}
   $body = "<p>Restore test performed on Server = $Server</p>"

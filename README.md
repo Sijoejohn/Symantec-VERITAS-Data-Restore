@@ -35,7 +35,7 @@ d)Click on send test email to verify the alert notification is received to the i
 
 # How to use the script & working of script
 
-STEP 1) Download the script “BEScriptRestore.ps1” from the GitHub and extract it to any drive.
+STEP 1) Download the script “BE-Restore.ps1” from the GitHub and extract it to any drive.
 
 STEP 2) Edit the following portion in the script.
 
@@ -85,9 +85,9 @@ STEP 3) Open a PowerShell (Administrative PS recommended)
 
 STEP 4) Navigate and set path to script root folder
 
-Example: PS D:\BEScriptRestore>
+Example: PS D:\Symantec-VERITAS-Data-Restore>
 
-STEP 5) Run the script --> PS D:\BEScriptRestore > .\BERestoreTest.ps1
+STEP 5) Run the script --> PS D:\Symantec-VERITAS-Data-Restore> .\BE-Restore.ps1
 
 SETP 6) Script creates a new folder named “present date” under the restore path specified and restores the files & folders into it. Also you will get an email notification from backup exec console about the restoration job status.
 
@@ -97,7 +97,7 @@ STEP 7) upon completion of restore operation, the script verifies the file resto
 
 STEP 8) Logging is enabled on the script for troubleshooting, check “logs” folder under the script root folder if you come across any errors.
 
-Example: D:\BEScriptRestore\logs
+Example: D:\Symantec-VERITAS-Data-Restore>\logs
 
 STEP 9) The log will be attached and send to the recipient email address with following information
 
