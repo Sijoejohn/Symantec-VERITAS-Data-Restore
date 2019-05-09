@@ -90,11 +90,13 @@ Example: PS D:\BEScriptRestore>
 STEP 5) Run the script --> PS D:\BEScriptRestore > .\BERestoreTest.ps1
 
 SETP 6) Script creates a new folder named “present date” under the restore path specified and restores the files & folders into it. Also you will get an email notification from backup exec console about the restoration job status.
+
 Example: 05-05-2019
 
 STEP 7) upon completion of restore operation, the script verifies the file restored and notify if the folder is empty or not. If folder is empty “restore failed”.
 
 STEP 8) Logging is enabled on the script for troubleshooting, check “logs” folder under the script root folder if you come across any errors.
+
 Example: D:\BEScriptRestore\logs
 
 STEP 9) The log will be attached and send to the recipient email address with following information
