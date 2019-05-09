@@ -8,7 +8,7 @@
 # The Script can be used to automate file/folder restore test from the Symantec/VERITAS backup. 
 # Restore test is to ensure that the data is recoverable from the backup..
 # .SYNOPSIS
-# Usage Example   : PS>.BERestore.ps1
+# Usage Example   : PS>.BE-Restore.ps1
 ################################################################################
 
 
