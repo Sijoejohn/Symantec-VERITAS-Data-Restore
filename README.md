@@ -87,7 +87,7 @@ STEP 4) Navigate and set path to script root folder
 
 Example: PS D:\BEScriptRestore>
 
-STEP 5) Run the script  PS D:\BEScriptRestore > .\BERestoreTest.ps1
+STEP 5) Run the script --> PS D:\BEScriptRestore > .\BERestoreTest.ps1
 
 SETP 6) Script creates a new folder named “present date” under the restore path specified and restores the files & folders into it. Also you will get an email notification from backup exec console about the restoration job status.
 Example: 05-05-2019
@@ -100,11 +100,17 @@ Example: D:\BEScriptRestore\logs
 STEP 9) The log will be attached and send to the recipient email address with following information
 
 Restore test performed on Server = Server01
+
 Restored folder = D:\BackupTest
+
 Restore path = \\backupexecserver\d$\BackupRestoreTest\07052019
+
 Restore start time = 05/07/2019 15:05:36
+
 Restore end time = 05/07/2019 15:05:36
+
 Size of data restored in MB = 9.35 MB
+
 Restore status = Success
 
 STEP 10) Information in the Log file helps to analyze the estimated time requirement for data restore.
