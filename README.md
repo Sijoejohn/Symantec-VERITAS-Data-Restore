@@ -54,6 +54,9 @@ $Server = "Server01"
 Example: “Server01” or Server01.sjohnonline.in
 
 **Data restore path**
+**Note: If admin shares(d$ c$) are disabled in your machine create a share in the backup server and use the share path "\\backupexecserver\sharename\$today"**
+**Enabling admin shares may increase the chances of attack surfaces**
+
 
 $Restorepath = "\\backupexecserver\d$\BackupRestoreTest\$today"
 
